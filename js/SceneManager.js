@@ -3,7 +3,7 @@ function SceneManager(canvas) {
     const screenDimensions = {
         width: canvas.width,
         height: canvas.height
-    }
+    };
     
     const scene = buildScene();
     const renderer = buildRender(screenDimensions);
@@ -14,6 +14,8 @@ function SceneManager(canvas) {
 
     const dynamicSubjects = [];
     createSceneSubjects();
+
+    var keyMap = [];
 
 
     function buildScene() {
@@ -56,7 +58,9 @@ function SceneManager(canvas) {
 
             for(let i=0; i<dynamicSubjects.length; i++)
                 dynamicSubjects[i].update();
-        
+
+            theSpaceship.handleInput(keyMap, camera);
+
             renderer.render(scene, camera);
         }
     }
@@ -74,5 +78,9 @@ function SceneManager(canvas) {
         camera.top = height / 2;
         camera.bottom = -height / 2;
         camera.updateProjectionMatrix();      
+    }
+
+    this.handleInput = function(keyCode, isDown) {
+        keyMap[keyCode] = isDown;
     }
 }

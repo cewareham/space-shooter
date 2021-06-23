@@ -1,14 +1,16 @@
 # THREEJS GAME: Space Shooter
 
-## STEP-1 : Initialisation
+## STEP-4 : Controlling our Spaceship
 
-**Goal:** Moving our scene, and therefore moving the camera and the spaceship upwards with a constant speed(till the background lasts).
+**Goal:** Handling input to move spaceship through the space.
 
 **Procedure:**  
 
-- Inside the update function of `Spaceship.js`, translate the spaceship along y-axis with constant speed.
+- Inside `main.js`, we'll add _event listeners_ for `window.onkeydown` & `window.onkeyup` and call the `handleInput` method of SceneManager.
 
-- Similarly translate the camera along y-axis with the same constant speed. Also call the update method of the dynamicSubjects every frame. 
+- Inside `SceneManager.js`, we'll maintain a keyMap that stores status of each key(_true_ if pressed else _false_) which would be sent to  our spaceship's `handleInput` method in update. We'll be  updating the keyMap in SceneManager's `handleInput` method.
+
+- Finally, we'll map the keys _W,S,A,D_ to translate the spaceship in the corresponding direction while making sure that it doesn't go out of bounds. 
 
 **Testing:**  
 
@@ -16,4 +18,4 @@ In order to test the application, run `python3 -m http.server` and head over to 
 
 **Output:**
 
-![Step-3 image](https://cdn-images-1.medium.com/max/800/1*z1v9p3vGhEYMvKoLOwsOsA.gif)
+![Step-4 image](https://cdn-images-1.medium.com/max/800/1*xuwsdxkCp1yxTix1uronfQ.gif)
