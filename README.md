@@ -1,19 +1,32 @@
 # THREEJS GAME: Space Shooter
 
-## STEP-8 : Adding Scoreboard
- 
-**Goal:** Adding scoreboard at the top and a 'Game Over' / 'You Lost' message t the end.   
+A Browser based replica of the famous _**"Space Shooter"**_ game made in Three.js  
 
-**Procedure:**  
+Checkout the complete tutorial on how to build games using Three.js [here](https://javascript.plainenglish.io/three-js-tutorial-to-build-your-first-browser-game-ae34bb0d351d).
 
-- Simply add 2 _divs_ inside `index.html`: one for the scoreboard and other to display _'Game Over'_ or _'You Lost'_ and give them proper styling.
+Play the game here:
+- [2D Version](https://fik-shun.github.io/Space-Shooter-ThreeJS/)  
+- [3D Version](https://fik-shun.github.io/Fik-shoot/)  
 
-- After _**every collision**_, we  update our variables _score_ and _health_ and update the scoreboard _div_. When the _health_ of our spaceship falls to 0, we display - **You Lost** and when the camera reaches the end of our background, we'll display - **Game Over**.
+Checkout the Teaser/Trailer for the game [here](https://www.youtube.com/watch?v=NTtcsSwfWnA).  
 
-**Testing:**  
+
+### Key Bindings
+
+|   Key    |       Description        |
+|----------|--------------------------|
+|    W     |    Plane: move forward   |
+|    S     |    Plane: move backward  |
+|    D     |     Plane: move right    |
+|    A     |     Plane: move left     |
+|  Space   |       Shoot Missile      |
+
+
+### Testing
 
 In order to test the application, run `python3 -m http.server` and head over to [localhost:8000](http://localhost:8000) in the  browser.
 
-**Output:**
 
-![Step-8 image](https://cdn-images-1.medium.com/max/800/1*GFou7F2oM3e0PZ1lNEY6NA.png)
+### Output
+
+![Final image](https://cdn-images-1.medium.com/max/2560/1*IrxsckKSOFhyYCnRW40wUw.png)
