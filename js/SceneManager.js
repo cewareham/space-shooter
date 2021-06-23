@@ -3,7 +3,7 @@ function SceneManager(canvas) {
     const screenDimensions = {
         width: canvas.width,
         height: canvas.height
-    };
+    }
     
     const scene = buildScene();
     const renderer = buildRender(screenDimensions);
@@ -12,7 +12,7 @@ function SceneManager(canvas) {
     var ambientLight = new THREE.AmbientLight('#ffffff', 1.5);
     scene.add(ambientLight);
 
-    var dynamicSubjects = [];
+    const dynamicSubjects = [];
     createSceneSubjects();
 
 
@@ -51,8 +51,14 @@ function SceneManager(canvas) {
 
 
     this.update = function() {
+        if (camera.position.y < 2000) {
+            camera.position.y += 1;
 
-        renderer.render(scene, camera);
+            for(let i=0; i<dynamicSubjects.length; i++)
+                dynamicSubjects[i].update();
+        
+            renderer.render(scene, camera);
+        }
     }
 
     this.onWindowResize = function() {
