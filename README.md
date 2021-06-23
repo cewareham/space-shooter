@@ -1,12 +1,12 @@
 # THREEJS GAME: Space Shooter
 
-## STEP-6 : Shooting Missiles
+## STEP-7 : Collision Detection
 
-**Goal:** Adding ability to shoot missiles using SPACE key.
+**Goal:** Adding Collision detection to our game, so that the spaceship collects coins, missiles kill the opps and spaceship's health decreases on colliding with the enemies. 
 
 **Procedure:**  
 
-- So create a Missile component similar to the enemy above. Then,  in update method of SceneManager, we'll handle Space input and store our missiles in an array.
+- We need to check for collision in _every frame_, and so  let's create a function `checkCollsions` and call it in the update method. The `isCollision` function below would determine intersection between two models using their positions and dimensions.
 
 **Testing:**  
 
@@ -14,4 +14,4 @@ In order to test the application, run `python3 -m http.server` and head over to 
 
 **Output:**
 
-![Step-6 image](https://cdn-images-1.medium.com/max/800/1*An5HvZH8cJVGjWP9LY6rPg.png)
+![Step-7 image](https://cdn-images-1.medium.com/max/800/1*UDamEx44vbmac7WlmEMcDA.gif)
