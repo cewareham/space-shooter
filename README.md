@@ -1,16 +1,16 @@
 # THREEJS GAME: Space Shooter
 
-## STEP-4 : Controlling our Spaceship
+## STEP-5 : Adding Coins and Enemies
 
-**Goal:** Handling input to move spaceship through the space.
+**Goal:** Making our game more fun by randomly placing coins and enemies.   
 
 **Procedure:**  
 
-- Inside `main.js`, we'll add _event listeners_ for `window.onkeydown` & `window.onkeyup` and call the `handleInput` method of SceneManager.
+- Create a new component in `Coin.js` where create a sphere, color it golden, position it and store its height/width.
 
-- Inside `SceneManager.js`, we'll maintain a keyMap that stores status of each key(_true_ if pressed else _false_) which would be sent to  our spaceship's `handleInput` method in update. We'll be  updating the keyMap in SceneManager's `handleInput` method.
+- Now create a function `placeCoins` to **randomly** spread the coins all over the background plane and call this function inside `createSceneSubjects` method of SceneManager.
 
-- Finally, we'll map the keys _W,S,A,D_ to translate the spaceship in the corresponding direction while making sure that it doesn't go out of bounds. 
+- Similarly, you may add the enemies and place them randomly. I've used `.gltf` model for enemy object and therefore linked GLTFLoader in `index.html`. Also _don't forget_ to link the new  js files :)
 
 **Testing:**  
 
@@ -18,4 +18,4 @@ In order to test the application, run `python3 -m http.server` and head over to 
 
 **Output:**
 
-![Step-4 image](https://cdn-images-1.medium.com/max/800/1*xuwsdxkCp1yxTix1uronfQ.gif)
+![Step-5 image](https://cdn-images-1.medium.com/max/800/1*8msbBtOvOOrHdyyd1QAEeA.png)
