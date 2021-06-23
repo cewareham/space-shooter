@@ -18,6 +18,7 @@ function bindEventListeners() {
 
 	window.onkeydown = handleKeyDown;
 	window.onkeyup = handleKeyUp;
+
 }
 
 function resizeCanvas() {
@@ -39,7 +40,6 @@ function handleKeyUp(event) {
 	var keyCode = event.which;
 	sceneManager.handleInput(keyCode, false);
 }
-
 
 function render() {
 

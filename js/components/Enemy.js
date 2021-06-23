@@ -1,27 +1,23 @@
 
-function Enemy(scene, x, y) {
+function Enemy(scene, x, z) {
 	
-	var modelLoader = new THREE.GLTFLoader();
+	var modelLoader = new THREE.GLTFLoader()
 	this.model;
-	this.height;
-	this.width;
 
 	modelLoader.load
 		( 
 			"../../assets/models/enemy/enemy.gltf", 
-			( function(obj) {
+			(function(obj)
+			{
 				this.model = obj.scene;
 
-				this.model.rotation.x = Math.PI / 2;
 				this.model.rotation.y = -Math.PI / 2;
+				this.model.rotation.x = Math.PI / 24;
 
-				this.model.position.set(x, y, -100);
-				this.model.scale.set(0.2,0.2,0.2);
+				this.model.position.set(x, 0, z);
+				this.model.scale.set(0.0018,0.0018,0.0018);
 
 				scene.add(this.model);
-				var enemyBndBox = new THREE.Box3().setFromObject(this.model);
-				this.height = enemyBndBox.getSize().y;
-				this.width = enemyBndBox.getSize().x;
 			}).bind(this)
 		)
 

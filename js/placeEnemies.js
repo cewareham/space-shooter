@@ -3,10 +3,10 @@ function placeEnemies(scene) {
 
 	const theEnemies = [];
 
-	[...Array(5).keys()].map(y => {
+	[...Array(24).keys()].map(z => {
 
 		getRandomPositions().map(x => { 
-			const e = new Enemy(scene, 200*(x-4), 400*(y+1));
+			const e = new Enemy(scene, 2*(x-7), -100*(z+1));
 			theEnemies.push(e);
 		});
 	});
@@ -15,9 +15,9 @@ function placeEnemies(scene) {
 	
 	function getRandomPositions() {
 
-		var noEnemies = Math.floor((Math.random() * 4));	
+		var noEnemies = 1 + Math.floor((Math.random() * 3));	
 		
-		var arr = [...Array(9).keys()];
+		var arr = [...Array(15).keys()];
 
 		for (let i = arr.length - 1; i > 0; i--) {
 		    
@@ -27,7 +27,7 @@ function placeEnemies(scene) {
 		    arr[j] = temp;
 		}
 
-		return arr.slice(0, noEnemies);
+		return arr.slice(0, noEnemies)
     }
 
 

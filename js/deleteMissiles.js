@@ -1,9 +1,9 @@
-function destroyMissiles(scene, theMissiles) {
+function deleteMissiles(theMissiles) {
 
     var j = theMissiles.length;
     while (j--) {
         if (theMissiles[j].model && theMissiles[j].model.position.z < -2400) {
-            scene.remove(theMissiles[j].model);
+            theMissiles[j].destroy();
             theMissiles.splice(j, 1);
         }
     }
