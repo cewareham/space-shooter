@@ -1,16 +1,16 @@
 # THREEJS GAME: Space Shooter
 
-## STEP-1 : Initialisation
+## STEP-2 : Adding Scene Subjects
 
-**Goal:** Organizing our directory structure and creating a boilerplate that would be helpful for your future Three.js projects.   
+**Goal:** Adding a decent background and the Spaceship to the game.
 
 **Procedure:**  
 
-- First of all, create an `index.html` file. This will be the _entry point of our webpage/game_. It is basically a blank HTML page with a canvas element, and links the Three.js library and other js files. Whenever we create a new js file, we'll come back to `index.html` and link it here.
+- Create the file `Background.js` and create a Plane(that will act as background) and add texture(image) to it. Position the plane such that its lower-end touches the bottom of the browser window and therefore translate it along y-axis by `(3000-window.height)/2`.
 
-- Next create `main.js`, which is the _entry point to the JavaScript side_ of the application and has access to the DOM and contains SceneManager.
+- Next for Spaceship, download a free 3D model from the internet (sketchfab, cgtrader, etc.) and store it inside `assets/`. Inside `Spaceship.js`, load the model, add texture to it and store its dimensions. For loading models, link the loader for the model extension _separately_ in `index.html` (i've linked OBJLoader for my `.obj` model).
 
-- And finally create `SceneManager.js` which is _responsible for handling the Three.js side_ of the app, which is completely hidden from the main. It knows nothing about the DOM and creates the Scene, Renderer and Ortho-Camera. Since this is a 2D game, I've used an Ortho-Camera. 
+- Inside `SceneManager.js`, create a new method `createSceneSubjects` that initializes the objects (background and spaceship). Also maintain an array of dynamic subjects(those needed to be updated every frame).
 
 **Testing:**  
 
@@ -18,4 +18,4 @@ In order to test the application, run `python3 -m http.server` and head over to 
 
 **Output:**
 
-![Step-1 image](https://cdn-images-1.medium.com/max/800/1*Wpr5KZdG0Mvl7OW5xAuXmA.png)
+![Step-2 image](https://cdn-images-1.medium.com/max/800/1*TfW9H84cWvTMv4jT8uLR0w.png)
